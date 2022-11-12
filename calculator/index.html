@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://kit.fontawesome.com/28445ba17a.js" crossorigin="anonymous"></script>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    
+    <div id="calculator-main-content">
+        
+        <input type="textarea"  placeholder="Calculator" id="result">
+        
+    <div id="calculator-button">
+        <button onclick="calculate('%')" class="button">%</button>
+        <button onclick="calculate('/')" class="button">÷</button>
+        <button onclick="slice()" class="button"><i class="fa-solid fa-delete-left"></i></button>      
+        <button onclick="clr()" id="button3">Clear</button>
+        <button onclick="calculate(7)" class="button">7</button>
+        <button onclick="calculate(8)" class="button">8</button>
+        <button onclick="calculate(9)" class="button">9</button>
+        <button onclick="calculate('*')" class="button">x</button>
+        <button onclick="calculate(4)" class="button">4</button>
+        <button onclick="calculate(5)" class="button">5</button>
+        <button onclick="calculate(6)" class="button">6</button>
+        <button onclick="calculate('-')" class="button">-</button>
+        <button onclick="calculate(1)" class="button">1</button>
+        <button onclick="calculate(2)" class="button">2</button>
+        <button onclick="calculate(3)" class="button">3</button>
+        <button onclick="calculate('+')" class="button">+</button>
+        <button onclick="calculate()" class="button"><sup>+</sup><sup>/</sup><sup>-</sup></button>
+        <button onclick="calculate(0)" class="button">0</button>
+        <button onclick="calculate('.')" class="button">.</button>
+        <button onclick="Result()" class="button1">=</button>
+    </div>
+</div>
+<script>
+
+    let result=document.getElementById("result");
+
+let calculate=(number)=>{
+    result.value+=number;
+
+}
+let Result=()=>{
+    try{
+        result.value=eval(result.value);
+    }
+    catch{
+        alert("enter a valid input");
+    }
+
+}
+
+function clr(){
+    result.value="";
+}
+
+function slice(){
+    result.value=result.value.slice(0,-1);
+}
+
+
+</script>
+</body>
+
+</html>
